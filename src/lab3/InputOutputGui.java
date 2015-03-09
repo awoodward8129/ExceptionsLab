@@ -18,18 +18,19 @@ public class InputOutputGui {
     public void startConversation() {
         
         String msg="";
-        
+         String fullName ="";
+         String lastName ="";
         do{
-        String fullName = JOptionPane.showInputDialog("Enter full name:");
+       fullName = JOptionPane.showInputDialog("Enter full name:");
        
         try{
-        String lastName = nameService.extractLastName(fullName);
+        lastName = nameService.extractLastName(fullName);
         
         msg = "Your last name is: " + lastName;
         }catch(MyCustomException e){
         
         }
-        }while(msg.equals(""));
+        }while(msg.equals("") || lastName.equals(""));
         JOptionPane.showMessageDialog(null, msg);
         
     }

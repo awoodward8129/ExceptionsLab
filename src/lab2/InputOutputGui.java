@@ -17,12 +17,14 @@ public class InputOutputGui {
 
     public void startConversation() {
          String msg ="";
+          String lastName = "";
+          String fullName="";
         
          do{
-             String fullName = JOptionPane.showInputDialog("Enter full name:");
+            fullName = JOptionPane.showInputDialog("Enter full name:");
              try{
        
-                String lastName = "";
+               
         
                 lastName = nameService.extractLastName(fullName);
   
@@ -33,7 +35,7 @@ public class InputOutputGui {
             catch (IllegalArgumentException e){
              JOptionPane.showMessageDialog(null, "Try again!");
              }
-         }while(msg.equals(""));
+         }while(msg.equals("") || lastName.equals(""));
         
                 JOptionPane.showMessageDialog(null, msg);
                 
